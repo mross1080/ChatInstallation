@@ -1,0 +1,30 @@
+body {
+
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  
+  nav {
+    background-color: white;
+    color: black !important;
+  }
+  
+  .nav-link {
+    color: black;
+  }
+  
+  
+  .material-icons {
+    color: black;
+  }
+  
+  .no-shadows {
+    box-shadow: none!important;
+  }
+  
+  .button-nav {
+    margin: 30px;
+    padding: 20px;
+    background-color: #C4C4C4;
+    margin-top: 0px;
+  }
+  
