@@ -2,6 +2,7 @@ import React from 'react'
 import { AnimatePresence, motion } from "framer-motion";
 import { Switch, Route, NavLink, useLocation, Link } from "react-router-dom";
 import About from "./About"
+import LoomOne from './LoomOne';
 const pageVariants = {
     initial: {
         opacity: 0,
@@ -77,49 +78,25 @@ export default function HumansAsMachines() {
                 <br></br>
                 <br></br>
                 <br></br>
-                <h6 className="center-align">Humans As Machines</h6>
+                <h3 className="center-align">Humans As Machines</h3>
                 <br></br>
                 <br></br>
                 <br></br>
 
                 <ul role="nav">
-                    <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+                    <li><NavLink to="/about">about</NavLink></li>
                     <li><Link to="/users">Users</Link></li>
-                    <li><Link to="/profile">Profile</Link></li>
+                    <li><NavLink to="/loomone">Loom One</NavLink></li>
                 </ul>
 
                 <Switch>
                 <div>
-                    <Route path='/dashboard' component={About} />
+                    <Route path='/about' component={About} />
                     <Route path='/profile' component={Profile} />
-                    <Route path='/users' component={Users} />
+                    <Route path='/loomone' component={LoomOne} />
                 </div>
                 </Switch>
-                {/* <ul>
-                    <li className="nav-item">
-                        <NavLink to="/humansasmachines" className="nav-link">
-                            Humans As Machines
-              </NavLink>
-                    </li>
-
-                    <li className="nav-item">
-                        <NavLink to="/" exact className="nav-link">
-                            Home
-              </NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink to="/about" className="nav-link">
-                            About
-              </NavLink>
-                    </li>
-
-                </ul> */}
-                {/* <Switch >
-                    {/* <Route path="/about" component={About} />
-              <Route path="/humansasmachines" component={HumansAsMachines} />
-
-              <Route path="/" component={Introduction} /> */}
-                {/* </Switch> */} 
+    
             </div>
     
     );

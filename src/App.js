@@ -52,7 +52,7 @@ function App() {
               <Route path="/about" component={About} />
               <Route path="/humansasmachines" component={HumansAsMachines} />
 
-              <Route path="/Introduction" component={Introduction} />
+              <Route path="/" component={Introduction} />
             </Switch>
           </AnimatePresence>
         </main>

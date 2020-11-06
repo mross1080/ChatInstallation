@@ -1,6 +1,8 @@
 import React from 'react'
+import {Route, Link} from 'react-router-dom'
 import { AnimatePresence, motion } from "framer-motion";
-
+import { Button } from 'react-materialize';
+import About from './About'
 
 const pageVariants = {
   initial: {
@@ -67,7 +69,11 @@ export default function Home() {
               <div className="col s4 center-align">  <p>planning to see the exhibition in person?</p> <div className="button-nav"><h5>SCHEDULE VISIT</h5></div></div>
               <div className="col s4 center-align"></div>
             </div>
-  
+            <Link to='/about'>Home</Link>
+            <Button>
+                <p>Hello</p>
+                <Route exact path='/about' component={About} />
+            </Button>
   
           </div>
         </div>
