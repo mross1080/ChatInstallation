@@ -67,37 +67,26 @@ const Users = ({ match }) => (
   </div>
 )
 
-export default function HumansAsMachines() {
 
 
-    
-    return (
 
-            <div>
-
-                <br></br>
-                <br></br>
-                <br></br>
-                <h3 className="center-align">Humans As Machines</h3>
-                <br></br>
-                <br></br>
-                <br></br>
-
-                <ul role="nav">
-                    <li><NavLink to="/about">about</NavLink></li>
-                    <li><Link to="/users">Users</Link></li>
-                    <li><NavLink to="/loomone">Loom One</NavLink></li>
-                </ul>
-
-                <Switch>
-                <div>
-                    <Route path='/about' component={About} />
-                    <Route path='/profile' component={Profile} />
-                    <Route path='/loomone' component={LoomOne} />
-                </div>
-                </Switch>
-    
+export default     function Loom({ match }) {
+        const loom = loom_data.find(({ id }) => id === match.params.topicId)
+      
+        return (
+          <div>
+            <div class="progress">
+              <div class="indeterminate"></div>
             </div>
-    
-    );
-}
+            <h2>{loom.name}</h2>
+            <p>{loom.description}</p>
+      
+      
+      
+            <hr />
+      
+            <Route path={`${match.path}/:subId`} component={Resource} />
+          </div>
+        )
+      }
+      

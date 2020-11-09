@@ -176,19 +176,6 @@ function Looms({ match }) {
 }
 
 
-
-
-// function Home() {
-//   return (
-//     <div>
-//     <h1>
-//       Home
-//     </h1>
-//     {/* <Link to='/couch'>Couch</Link> */}
-//     {/* <Route path='/couch' component={Couch} />}
-//   )
-// }
-
 const User = ({ match }) => (
   <div>
     <h3>This is the profile of {match.params.userId}</h3>
