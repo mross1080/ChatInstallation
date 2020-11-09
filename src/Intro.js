@@ -1,5 +1,5 @@
 import React from 'react'
-import {Route, Link} from 'react-router-dom'
+import {Route, Link, NavLink, Redirect} from 'react-router-dom'
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from 'react-materialize';
 import About from './About'
@@ -12,7 +12,7 @@ const pageVariants = {
   },
   in: {
     opacity: 1,
-    x: 100,
+    x: "20vw",
     scale: 1
   },
   out: {
@@ -33,18 +33,17 @@ const pageStyle = {
 };
 export default function Home() {
     return (
-        <motion.div
-        style={pageStyle}
-        initial="initial"
-        animate="in"
-        exit="out"
-        variants={pageVariants}
-        transition={pageTransition}
-      >
+      //   <motion.div
+      //   style={pageStyle}
+      //   initial="initial"
+      //   animate="in"
+      //   exit="out"
+      //   variants={pageVariants}
+      //   transition={pageTransition}
+      // >
         <div>
   
-          <br></br>
-          <br></br>
+      
           <br></br>
           <h6 className="center-align">The Gottesman Libraries at Teachers College welcomes you to the exhibition</h6>
           <br></br>
@@ -69,14 +68,14 @@ export default function Home() {
               <div className="col s4 center-align">  <p>planning to see the exhibition in person?</p> <div className="button-nav"><h5>SCHEDULE VISIT</h5></div></div>
               <div className="col s4 center-align"></div>
             </div>
-            <Link to='/about'>Home</Link>
-            <Button>
-                <p>Hello</p>
-                <Route exact path='/about' component={About} />
-            </Button>
-  
+            {/* <Redirect to="/about" /> */}
+            <br></br>
+          <br></br>
+            <div class="center-align"><NavLink to='/about'>Go To Experience</NavLink></div>
+      
+            <Route exact path='/about' component={About} />
           </div>
         </div>
-      </motion.div>
+      // </motion.div>
     );
   }

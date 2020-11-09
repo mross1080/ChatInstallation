@@ -8,6 +8,10 @@ import About from './About'
 import Intro from './Intro'
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
+import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
+import './App.css';
+import HumansAsMachines from './HumansAsMachines'
 
 
 const loom_data = [{
@@ -131,7 +135,6 @@ function Loom({ match }) {
 
       <hr />
 
-      <Route path={`${match.path}/:subId`} component={Resource} />
     </div>
   )
 }
@@ -209,14 +212,33 @@ const Users = ({ match }) => (
 )
 
 
+
 class App extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      showModal: false
+    };
+
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
+  }
+
+  handleOpenModal() {
+    this.setState({ showModal: true });
+  }
+
+  handleCloseModal() {
+    this.setState({ showModal: false });
+  }
+
   render() {
     return (
-      <div className='container'>
-        <nav >
+      <div className=''>
+        <nav className='no-shadows'>
           <div className="nav-wrapper">
-            <a href="#" className="brand-logo">Logo</a>
-            <ul id="nav-mobile" className="right hide-on-med-and-down">
+            <ul id="nav-mobile" className="right">
               <li className="nav-item">
                 <Link to="/humansasmachines" className="nav-link">
                   Humans As Machines
@@ -224,8 +246,8 @@ class App extends React.Component {
               </li>
 
               <li className="nav-item">
-                <Link to="/" exact className="nav-link">
-                  Home
+                <Link to="/about" exact className="nav-link">
+                  About
               </Link>
               </li>
               <li className="nav-item">
@@ -233,21 +255,57 @@ class App extends React.Component {
                   About
               </Link>
               </li>
+              <li class="menu-button"><a onClick={this.handleOpenModal}><i class="material-icons">menu</i></a></li>
 
             </ul>
           </div>
 
 
         </nav>
+        <div>
+         
+          <Modal
+            isOpen={this.state.showModal}
+            contentLabel="Minimal Modal Example"
+            className="MainModal"
+            style={{
+              overlay: {
+                backgroundColor: null
+              },
+              content: {
+                color: null
+              }
+            }}
+          >
+            <div class="menu-overlay">
+              <div class="full-menu--middle">
 
-        <div style={{ width: 1000, margin: '0 auto' }}>
-       
+                <ul class="main-nav">
+                  <li class="item"><Link to="/" onClick={this.handleCloseModal} className="nav-link"><a href="#">Warping The Future</a> </Link><div  onClick={this.handleCloseModal} class="menu-button"><i class="material-icons">clear</i></div></li>
+                  <li class="item"><Link to="/about" onClick={this.handleCloseModal} className="nav-link"><a href="#">About</a></Link></li>
+                  <li class="item"><a href="#">Schedule Visit<i class="material-icons">send</i></a></li>
+                  <li class="item"><Link onClick={this.handleCloseModal} to="/humansasmachines" className="nav-link">
+                  Humans As Machines
+              </Link></li>
+                  <li class="item"><a href="#">Humans Automating Machines</a></li>
+                  <li class="item"><a href="#">Machines As Humans</a></li>
+                  <li class="item"><a href="#">Saved for Later</a></li>
+                  <li class="item"><a href="#">Book Collection<i class="material-icons">send</i></a></li>
+                  <li class="item"><a href="#">Credits</a></li>
+                </ul>
+                </div>
+              </div>
+        </Modal>
+        </div>
+        <div>
 
-          <hr />
+
+
 
           <Route exact path='/' component={Intro} />
+          <Route exact path='/about' component={About} />
           <Route path='/topics' component={Topics} />
-          <Route path='/humansasmachines' component={Looms} />
+          <Route path='/humansasmachines' component={HumansAsMachines} />
         </div>
       </div>
     )

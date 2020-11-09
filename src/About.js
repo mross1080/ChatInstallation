@@ -31,21 +31,16 @@ const pageStyle = {
 };
 export default function About() {
   return (
-    <motion.div
-      style={pageStyle}
-      initial="initial"
-      animate="in"
-      exit="out"
-      variants={pageVariants}
-      transition={pageTransition}
-    >
+    // <motion.div
+    //   style={pageStyle}
+    //   initial="initial"
+    //   animate="in"
+    //   exit="out"
+    //   variants={pageVariants}
+    //   transition={pageTransition}
+    // >
       <div>
 
-        <br></br>
-        <br></br>
-        <br></br>
-        <h6 className="center-align">The Gottesman Libraries at Teachers College welcomes you to the exhibition</h6>
-        <br></br>
         <br></br>
         <br></br>
 
@@ -72,6 +67,6 @@ export default function About() {
 
         </div>
       </div>
-    </motion.div>
+    // </motion.div>
   );
 }
