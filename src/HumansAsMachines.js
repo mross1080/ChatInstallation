@@ -4,6 +4,7 @@ import { Switch, Route, NavLink, useLocation, Link } from "react-router-dom";
 import About from "./About"
 import LoomOne from './LoomOne';
 import images from './imageStore'
+import humansAutomatingMachines from './humansAutomatingMachines'
 const pageVariants = {
   initial: {
     opacity: 0,
@@ -82,13 +83,13 @@ export default function Looms({ match }) {
   return (
     <div>
 
-
-
+<h2 class="center-align">Humans As Machines</h2>
+{/* 
       <div class="stationText">
         <h3 class="center-align">Humans As Machines</h3>
         <p class="center-align">I'm baby normcore disrupt palo santo tacos bicycle rights waistcoat food truck hammock vaporware cred polaroid listicle fam af. Microdosing wolf unicorn, activated charcoal freegan chambray chartreuse cornhole prism. Prism neutra scenester, venmo asymmetrical chillwave messenger bag photo booth kinfolk cornhole 3 wolf moon. Copper mug umami chia seitan freegan meditation adaptogen blog microdosing readymade. Vexillologist austin glossier helvetica, lo-fi keffiyeh seitan humblebrag thundercats try-hard whatever. +1 schlitz DIY wayfarers, craft beer blog messenger bag hell of actually.
 </p>
-      </div>
+      </div> */}
       <div class="placeholder">
         {/* <img src={loom1} alt="Logo" />; */}
 
@@ -111,6 +112,10 @@ export default function Looms({ match }) {
 
 
       <Route path={`${match.path}/:topicId`} component={Loom} />
+
+      <div class="center-align"><NavLink to='/humansAutomatingMachines'>Next Station</NavLink></div>
+      
+      <Route exact path='/about' component={humansAutomatingMachines} />
     </div>
   )
 }

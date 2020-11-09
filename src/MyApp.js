@@ -2,7 +2,8 @@ import React from 'react'
 import {
   BrowserRouter as Router,
   Route,
-  Link,
+  Link,withRouter,
+  useHistory ,useLocation ,browserHistory 
 } from 'react-router-dom'
 import About from './About'
 import Intro from './Intro'
@@ -12,225 +13,104 @@ import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import './App.css';
 import HumansAsMachines from './HumansAsMachines'
+import HumansAutomatingMachines from './humansAutomatingMachines'
+import MachinesAsHumans from './machinesAsHumans'
 
-
-const loom_data = [{
-  name: 'Loom One',
-  id: 'loom-one',
-  description: 'Declarative, component based routing for React',
-}, {
-  name: 'Loom Two',
-  id: 'loom-two',
-  description: 'A much better Loom',
-}]
-
-const topics = [
-  {
-    name: 'React Router',
-    id: 'react-router',
-    description: 'Declarative, component based routing for React',
-    resources: [
-      {
-        name: 'URL Parameters',
-        id: 'url-parameters',
-        description: "URL parameters are parameters whose values are set dynamically in a page's URL. This allows a route to render the same component while passing that component the dynamic portion of the URL so it can change based off of it.",
-        url: 'https://ui.dev/react-router-url-parameters/'
-      },
-      {
-        name: 'Programmatically navigate',
-        id: 'programmatically-navigate',
-        description: "When building an app with React Router, eventually you'll run into the question of navigating programmatically. The goal of this post is to break down the correct approaches to programmatically navigating with React Router.",
-        url: 'https://ui.dev/react-router-programmatically-navigate/'
-      }
-    ]
-  },
-  {
-    name: 'React.js',
-    id: 'reactjs',
-    description: 'A JavaScript library for building user interfaces',
-    resources: [
-      {
-        name: 'React Lifecycle Events',
-        id: 'react-lifecycle',
-        description: "React Lifecycle events allow you to tie into specific phases of a components lifecycle",
-        url: 'https://ui.dev/an-introduction-to-life-cycle-events-in-react-js/'
-      },
-      {
-        name: 'React AHA Moments',
-        id: 'react-aha',
-        description: "A collection of 'Aha' moments while learning React.",
-        url: 'https://ui.dev/react-aha-moments/'
-      }
-    ]
-  },
-  {
-    name: 'Functional Programming',
-    id: 'functional-programming',
-    description: 'In computer science, functional programming is a programming paradigm—a style of building the structure and elements of computer programs—that treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data.',
-    resources: [
-      {
-        name: 'Imperative vs Declarative programming',
-        id: 'imperative-declarative',
-        description: 'A guide to understanding the difference between Imperative and Declarative programming.',
-        url: 'https://ui.dev/imperative-vs-declarative-programming/'
-      },
-      {
-        name: 'Building User Interfaces with Pure Functions and Function Composition',
-        id: 'fn-composition',
-        description: 'A guide to building UI with pure functions and function composition in React',
-        url: 'https://ui.dev/building-user-interfaces-with-pure-functions-and-function-composition-in-react-js/'
-      }
-    ]
-  }
-]
-
-function Resource({ match }) {
-  const topic = topics.find(({ id }) => id === match.params.topicId)
-    .resources.find(({ id }) => id === match.params.subId)
-
-  return (
-    <div>
-      <h3>{topic.name}</h3>
-      <p>{topic.description}</p>
-      <a href={topic.url}>More info.</a>
-    </div>
-  )
-}
-
-function Topic({ match }) {
-  const topic = topics.find(({ id }) => id === match.params.topicId)
-
-  return (
-    <div>
-      <h2>{topic.name}</h2>
-      <p>{topic.description}</p>
-
-      <ul>
-        {topic.resources.map((sub) => (
-          <li key={sub.id}>
-            <Link to={`${match.url}/${sub.id}`}>{sub.name}</Link>
-          </li>
-        ))}
-      </ul>
-
-      <hr />
-
-      <Route path={`${match.path}/:subId`} component={Resource} />
-    </div>
-  )
-}
-
-function Loom({ match }) {
-  const loom = loom_data.find(({ id }) => id === match.params.topicId)
-
-  return (
-    <div>
-      <div class="progress">
-        <div class="indeterminate"></div>
-      </div>
-      <h2>{loom.name}</h2>
-      <p>{loom.description}</p>
-
-
-
-      <hr />
-
-    </div>
-  )
-}
-
-
-function Topics({ match }) {
-  return (
-    <div>
-      <h1>Topics</h1>
-      <ul>
-        {topics.map(({ name, id }) => (
-          <li key={id}>
-            <Link to={`${match.url}/${id}`}>{name}</Link>
-          </li>
-        ))}
-      </ul>
-
-      <hr />
-
-      <Route path={`${match.path}/:topicId`} component={Topic} />
-    </div>
-  )
-}
-
-function Looms({ match }) {
-  return (
-    <div>
-      <h1>Super Cool Looms!</h1>
-      <ul>
-        {loom_data.map(({ name, id }) => (
-          <li key={id}>
-            <Link to={`${match.url}/${id}`}>{name}</Link>
-          </li>
-        ))}
-      </ul>
-
-      <hr />
-
-      <Route path={`${match.path}/:topicId`} component={Loom} />
-    </div>
-  )
-}
-
-
-const User = ({ match }) => (
-  <div>
-    <h3>This is the profile of {match.params.userId}</h3>
-  </div>
-)
-
-
-const Users = ({ match }) => (
-  <div>
-    <h2>You are in the Users</h2>
-    <ul>
-      <li>
-        <Link to={`${match.url}/loom1`}>
-          Loom 1
-          </Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/loom2`}>
-          Loom 2
-          </Link>
-      </li>
-
-    </ul>
-
-    <Route path={`${match.url}/:userId`} component={User} />
-    <Route path='users/loom2' component={User} />
-    <Route exact path={match.url} render={() => (
-      <h5>Please select a user.</h5>
-    )} />
-  </div>
-)
-
-
+Modal.setAppElement('#root')
 
 class App extends React.Component {
 
+
+  
   constructor() {
     super();
     this.state = {
-      showModal: false
+      showModal: false,
+      showModal2: false,
+      showModal3: false,
+      showModal4: false
     };
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
+    this.handleOpenModal4 = this.handleOpenModal4.bind(this);
+    this.handleCloseModal4 = this.handleCloseModal4.bind(this);
+    this.handleOpenModal2 = this.handleOpenModal2.bind(this);
+    this.handleCloseModal2 = this.handleCloseModal2.bind(this);
+    this.handleOpenModal3 = this.handleOpenModal3.bind(this);
+    this.handleCloseModal3 = this.handleCloseModal3.bind(this);
   }
 
   handleOpenModal() {
+    console.log("LOCATION")
+   console.log( window.location.pathname)
+
+
     this.setState({ showModal: true });
   }
 
   handleCloseModal() {
     this.setState({ showModal: false });
+  }
+
+  handleOpenModal2() {
+    this.setState({ showModal2: true });
+  }
+
+  handleCloseModal2() {
+    this.setState({ showModal2: false });
+  }
+
+  handleOpenModal3() {
+    this.setState({ showModal3: true });
+  }
+
+  handleCloseModal3() {
+    this.setState({ showModal3: false });
+  }
+
+  handleOpenModal4() {
+    this.setState({ showModal4: true });
+  }
+
+  handleCloseModal4() {
+    this.setState({ showModal4: false });
+  }
+
+  // this.enableStationModal = this.enableStationModal.bind(this);
+
+
+  enableStationModal() {
+    this.handleCloseModal();
+
+  }
+  modalSelect = {
+    "/humansasmachines": () => this.handleOpenModal2(),
+    "/humansautomatingmachines": () => this.handleOpenModal3(),
+    "/machinesashumans": () => this.handleOpenModal4()
+  }
+  loadModal(pathKey) {
+
+    if (pathKey in this.modalSelect) {
+
+      this.modalSelect[pathKey]()
+    }
+    console.log("MY LOCATION ISSSS " + window.location.pathname)
+    
+  }
+
+
+
+  componentWillMount() {
+    // this.handleOpenModal2()
+    this.loadModal(window.location.pathname)
+    this.unlisten = this.props.history.listen((location, action) => {
+      console.log("on route change");
+      console.log(`The current URL is ${location.pathname}${location.search}${location.hash}`)
+      console.log(`The last navigation action was ${action}`)
+
+      this.loadModal(window.location.pathname)
+    });
   }
 
   render() {
@@ -239,22 +119,7 @@ class App extends React.Component {
         <nav className='no-shadows'>
           <div className="nav-wrapper">
             <ul id="nav-mobile" className="right">
-              <li className="nav-item">
-                <Link to="/humansasmachines" className="nav-link">
-                  Humans As Machines
-              </Link>
-              </li>
 
-              <li className="nav-item">
-                <Link to="/about" exact className="nav-link">
-                  About
-              </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/topics" className="nav-link">
-                  About
-              </Link>
-              </li>
               <li class="menu-button"><a onClick={this.handleOpenModal}><i class="material-icons">menu</i></a></li>
 
             </ul>
@@ -263,7 +128,7 @@ class App extends React.Component {
 
         </nav>
         <div>
-         
+
           <Modal
             isOpen={this.state.showModal}
             contentLabel="Minimal Modal Example"
@@ -281,21 +146,105 @@ class App extends React.Component {
               <div class="full-menu--middle">
 
                 <ul class="main-nav">
-                  <li class="item"><Link to="/" onClick={this.handleCloseModal} className="nav-link"><a href="#">Warping The Future</a> </Link><div  onClick={this.handleCloseModal} class="menu-button"><i class="material-icons">clear</i></div></li>
+                  <li class="item"><Link to="/" onClick={this.handleCloseModal} className="nav-link"><a href="#">Warping The Future</a> </Link><div onClick={this.handleCloseModal} class="menu-button"><i class="material-icons">clear</i></div></li>
                   <li class="item"><Link to="/about" onClick={this.handleCloseModal} className="nav-link"><a href="#">About</a></Link></li>
                   <li class="item"><a href="#">Schedule Visit<i class="material-icons">send</i></a></li>
-                  <li class="item"><Link onClick={this.handleCloseModal} to="/humansasmachines" className="nav-link">
-                  Humans As Machines
+                  <li class="item"><Link onClick={() => this.enableStationModal()} to="/humansasmachines" className="nav-link">
+                    Humans As Machines
               </Link></li>
-                  <li class="item"><a href="#">Humans Automating Machines</a></li>
-                  <li class="item"><a href="#">Machines As Humans</a></li>
+                  <li class="item"><Link onClick={this.handleCloseModal} to="/humansautomatingmachines" className="nav-link"><a href="#">Humans Automating Machines</a> </Link></li>
+                  <li class="item"><Link onClick={this.handleCloseModal} to="/machinesashumans" className="nav-link"><a href="#">Machines As Humans</a> </Link></li>
                   <li class="item"><a href="#">Saved for Later</a></li>
                   <li class="item"><a href="#">Book Collection<i class="material-icons">send</i></a></li>
                   <li class="item"><a href="#">Credits</a></li>
                 </ul>
-                </div>
               </div>
-        </Modal>
+            </div>
+          </Modal>
+
+
+          <Modal
+            
+            isOpen={this.state.showModal2}
+            contentLabel="Minimal Modal Example"
+            className="StationModal"
+            style={{
+              overlay: {
+                backgroundColor: null
+              },
+              content: {
+                color: null
+              }
+            }}
+          >
+            <div class="stationText">
+              <h3 class="center-align">Humans As Machines</h3>
+              <p class="center-align">I'm baby normcore disrupt palo santo tacos bicycle rights waistcoat food truck hammock vaporware cred polaroid listicle fam af. Microdosing wolf unicorn, activated charcoal freegan chambray chartreuse cornhole prism. Prism neutra scenester, venmo asymmetrical chillwave messenger bag photo booth kinfolk cornhole 3 wolf moon. Copper mug umami chia seitan freegan meditation adaptogen blog microdosing readymade. Vexillologist austin glossier helvetica, lo-fi keffiyeh seitan humblebrag thundercats try-hard whatever. +1 schlitz DIY wayfarers, craft beer blog messenger bag hell of actually.
+</p>
+
+<div className="row">
+              <div className="col s4 center-align"></div>
+              <div className="col s4 center-align" onClick={this.handleCloseModal2}>  <div className="button-nav"><h5>Go To Experience</h5></div></div>
+              <div className="col s4 center-align"></div>
+            </div>
+            </div>
+     
+          </Modal>
+          <Modal
+            
+            isOpen={this.state.showModal3}
+            contentLabel="Minimal Modal Example"
+            className="StationModal"
+            style={{
+              overlay: {
+                backgroundColor: null
+              },
+              content: {
+                color: null
+              }
+            }}
+          >
+            <div class="stationText">
+              <h3 class="center-align">Humans Automating Machines</h3>
+              <p class="center-align">I'm baby normcore disrupt palo santo tacos bicycle rights waistcoat food truck hammock vaporware cred polaroid listicle fam af. Microdosing wolf unicorn, activated charcoal freegan chambray chartreuse cornhole prism. Prism neutra scenester, venmo asymmetrical chillwave messenger bag photo booth kinfolk cornhole 3 wolf moon. Copper mug umami chia seitan freegan meditation adaptogen blog microdosing readymade. Vexillologist austin glossier helvetica, lo-fi keffiyeh seitan humblebrag thundercats try-hard whatever. +1 schlitz DIY wayfarers, craft beer blog messenger bag hell of actually.
+</p>
+
+<div className="row">
+              <div className="col s4 center-align"></div>
+              <div className="col s4 center-align" onClick={this.handleCloseModal3}>  <div className="button-nav"><h5>Go To Experience</h5></div></div>
+              <div className="col s4 center-align"></div>
+            </div>
+            </div>
+     
+          </Modal>
+          <Modal
+            
+            isOpen={this.state.showModal4}
+            contentLabel="Minimal Modal Example"
+            className="StationModal"
+            style={{
+              overlay: {
+                backgroundColor: null
+              },
+              content: {
+                color: null
+              }
+            }}
+          >
+            <div class="stationText">
+              <h3 class="center-align">Machines as Humans</h3>
+              <p class="center-align">I'm baby normcore disrupt palo santo tacos bicycle rights waistcoat food truck hammock vaporware cred polaroid listicle fam af. Microdosing wolf unicorn, activated charcoal freegan chambray chartreuse cornhole prism. Prism neutra scenester, venmo asymmetrical chillwave messenger bag photo booth kinfolk cornhole 3 wolf moon. Copper mug umami chia seitan freegan meditation adaptogen blog microdosing readymade. Vexillologist austin glossier helvetica, lo-fi keffiyeh seitan humblebrag thundercats try-hard whatever. +1 schlitz DIY wayfarers, craft beer blog messenger bag hell of actually.
+</p>
+
+<div className="row">
+              <div className="col s4 center-align"></div>
+              <div className="col s4 center-align" onClick={this.handleCloseModal4}>  <div className="button-nav"><h5>Go To Experience</h5></div></div>
+              <div className="col s4 center-align"></div>
+            </div>
+            </div>
+     
+          </Modal>
+
         </div>
         <div>
 
@@ -304,12 +253,14 @@ class App extends React.Component {
 
           <Route exact path='/' component={Intro} />
           <Route exact path='/about' component={About} />
-          <Route path='/topics' component={Topics} />
-          <Route path='/humansasmachines' component={HumansAsMachines} />
+          <Route  path='/humansasmachines' component={HumansAsMachines} />
+          <Route path='/humansautomatingmachines' component={HumansAutomatingMachines} />
+          <Route path='/machinesashumans' component={MachinesAsHumans} />
+
         </div>
       </div>
     )
   }
 }
 
-export default App
+export default withRouter(App);

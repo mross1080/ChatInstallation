@@ -28,6 +28,11 @@ nav {
 
 
 
+.StationModal {
+    opacity: 0.9;
+    height: 100vw;
+    background-color: white;
+}
 
 .MainModal {
     background-color: whitesmoke !important;
@@ -70,7 +75,8 @@ a:hover {
 }
 
 .stationText {
-    margin: 0px 100px;
+    padding-top: 150px;
+    margin: 0px 400px;
 }
 
 .placeholderList {
