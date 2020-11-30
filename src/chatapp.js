@@ -41,8 +41,7 @@ const Testimony = ({ match }) => {
                 <ul>
                     {
                         testimony.map((message =>
-
-                            <li class={message.msg_sender == "admin" ? "msgRight message" : "msgLeft message"}>{message.msg_body}</li>
+                            <li class={message.msg_sender == "admin" ? "msgRight messageRow" : "msgLeft messageRow"}><div class="message">{message.msg_body}</div></li>
                         ))
                     }
                 </ul>
@@ -55,7 +54,7 @@ const Testimony = ({ match }) => {
 const TestimonyGroup = ({ match }) => {
     const testimonies = TestimonyDB.all().find((function (t) {
         console.log(t.id + " versus " + match.params.testimonyGroupId)
-        // TODO refactor this 
+        // TODO refactor this
         if (match.params.testimonyGroupId === t.id) {
             return t
         }

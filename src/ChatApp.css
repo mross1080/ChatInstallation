@@ -41,9 +41,13 @@ a {
 
 }
 
+.messageRow {
+    display: flex;
+    flex-direction: row;
+}
+
   .message {
-  
-      min-height: 5vh;
+    min-height: 5vh;
     /* height: 30px; */
     margin: 30px;
     border: 2px solid white;
@@ -54,6 +58,9 @@ a {
     color: white;
     font-size: 20px;
   }
+  .msgLeft {
+    justify-content: flex-start;
+  }
   .msgRight {
-      justify-content: space-between;
+    justify-content: flex-end;
   }
