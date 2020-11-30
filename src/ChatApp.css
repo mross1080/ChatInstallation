@@ -53,12 +53,14 @@ a {
     border: 2px solid white;
     border-radius: 5px;
     list-style-type: none;
-    padding: 10px;
-    padding-right: 2px;
+    padding: 15px;
+    /* padding-right: 2px; */
     color: white;
     font-size: 20px;
   }
-  .msgLeft {
+  .msgLeftContent {
+    background-color: white;
+    color: black;
     justify-content: flex-start;
   }
   .msgRight {

@@ -12,25 +12,48 @@ import './ChatApp.css';
 import TestimonyDB from "./TestimonyDB.json"
 
 const Testimony = ({ match }) => {
-
+    let numberId = Number(match.params.testimonyId)
     console.log(match)
     console.log("IN RESOURCEEEEE")
     const testimony = TestimonyDB
         .find(({ id }) => id === match.params.testimonyGroupId)
-        .data[Number(match.params.testimonyId)]
+        .data[numberId]
+
+    const testimoniesForGroup = TestimonyDB
+    .find(({ id }) => id === match.params.testimonyGroupId)
+    .data.length
 
     console.log("IN RESOURCE")
     console.log(match)
+    
 
     console.log(testimony)
     console.log(match)
+    let previousPage = numberId -1
+    let nextPage = numberId +1
+
+    if (numberId == 0) {
+        previousPage = testimoniesForGroup - 1
+    }
+
+    if (nextPage == testimoniesForGroup) {
+        nextPage = 0
+    }
+
     return (
         <div>
             <nav>
                 <div class="row">
-                    <div className="navArrowLeft"><i class="large material-icons col s1">        chevron_left</i></div>
 
-                    <div className="navArrowRight"><i class="large material-icons col s1 offset-s10">        chevron_right</i></div>
+
+                    <Link to={`${previousPage}`}>
+                    <div className="navArrowLeft"><i class="large material-icons col s1">        chevron_left</i></div>
+                    </Link>
+                    <Link to={`${nextPage}`}>
+                        <div className="navArrowRight"><i class="large material-icons col s1 offset-s10">        chevron_right</i></div>
+                    </Link>
+
+
                 </div>
             </nav>
             <hr></hr>
@@ -39,7 +62,7 @@ const Testimony = ({ match }) => {
                 <ul>
                     {
                         testimony.map((message =>
-                            <li class={message.msg_sender == "admin" ? "msgRight messageRow" : "msgLeft messageRow"}><div class="message">{message.msg_body}</div></li>
+                            <li class={message.msg_sender == "admin" ? "msgRight messageRow" : "msgLeft messageRow"}><div class={message.msg_sender == "admin" ? "msgRight message" : "msgLeftContent message"}>{message.msg_body}</div></li>
                         ))
                     }
                 </ul>
@@ -50,15 +73,11 @@ const Testimony = ({ match }) => {
 }
 
 const TestimonyGroup = ({ match }) => {
-    const testimonies = TestimonyDB.find((function (t) {
-        console.log(t.id + " versus " + match.params.testimonyGroupId)
-        // TODO refactor this
-        if (match.params.testimonyGroupId === t.id) {
-            return t
-        }
 
 
-    }))
+    const testimonies = TestimonyDB.find(function (t) {
+        return match.params.testimonyGroupId === t.id;
+    })
     console.log("topic")
     console.log(testimonies)
     console.log(match)
