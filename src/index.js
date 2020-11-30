@@ -2,14 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 // import App from "./App";
-import MyApp from "./MyApp"
+import ChatApp from "./chatapp"
 import * as serviceWorker from "./serviceWorker";
 
 const props = {};
 
 ReactDOM.render(
   <BrowserRouter>
-    <MyApp {...props} />
+    <ChatApp {...props} />
   </BrowserRouter>,
   document.getElementById("root")
 );

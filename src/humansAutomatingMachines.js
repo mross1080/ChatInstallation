@@ -87,6 +87,10 @@ export default function Looms({ match }) {
                 <p class="center-align">I'm baby normcore disrupt palo santo tacos bicycle rights waistcoat food truck hammock vaporware cred polaroid listicle fam af. Microdosing wolf unicorn, activated charcoal freegan chambray chartreuse cornhole prism. Prism neutra scenester, venmo asymmetrical chillwave messenger bag photo booth kinfolk cornhole 3 wolf moon. Copper mug umami chia seitan freegan meditation adaptogen blog microdosing readymade. Vexillologist austin glossier helvetica, lo-fi keffiyeh seitan humblebrag thundercats try-hard whatever. +1 schlitz DIY wayfarers, craft beer blog messenger bag hell of actually.</p>
             </div>
             <div class="placeholder">
+
+                <div className="row">
+                    
+                </div>
                 {/* <img src={loom1} alt="Logo" />; */}
 
                 <h3 class="center-align">PLACEHOLDER CONTENT</h3>

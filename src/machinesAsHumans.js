@@ -4,6 +4,11 @@ import { Switch, Route, NavLink, useLocation, Link } from "react-router-dom";
 import About from "./About"
 import LoomOne from './LoomOne';
 import images from './imageStore'
+import M from 'materialize-css/dist/js/materialize.min.js';
+import $ from 'jquery'; 
+import Select from 'react-select'
+
+
 const pageVariants = {
     initial: {
         opacity: 0,
@@ -45,13 +50,24 @@ const loom_data = [{
     description: 'A much better Loom',
     photo_url: require('./assets/l.jpg'),
     full_description: "Drinking vinegar irony shabby chic art party, taxidermy pour-over listicle sriracha pop-up enamel pin. Ramps locavore drinking vinegar pug, wayfarers venmo waistcoat la croix chartreuse. Crucifix put a bird on it everyday carry hella vegan marfa. Asymmetrical wayfarers copper mug literally jean shorts glossier kombucha woke 8-bit mumblecore leggings XOXO aesthetic. Pabst blue bottle 90's church-key listicle hashtag, leggings live-edge gastropub 3 wolf moon hammock. Tattooed shabby chic chambray mumblecore activated charcoal photo booth banh mi twee pop-up lomo. Prism actually fixie, mixtape intelligentsia salvia activated charcoal retro fanny pack pitchfork paleo."
-}]
+},
+, {
+    name: 'Loom Three',
+    id: 'loom-three',
+    description: 'Truly the best Looking loom of them all',
+    photo_url: require('./assets/l.jpg'),
+    full_description: "Drinking vinegar irony shabby chic art party, taxidermy pour-over listicle sriracha pop-up enamel pin. Ramps locavore drinking vinegar pug, wayfarers venmo waistcoat la croix chartreuse. Crucifix put a bird on it everyday carry hella vegan marfa. Asymmetrical wayfarers copper mug literally jean shorts glossier kombucha woke 8-bit mumblecore leggings XOXO aesthetic. Pabst blue bottle 90's church-key listicle hashtag, leggings live-edge gastropub 3 wolf moon hammock. Tattooed shabby chic chambray mumblecore activated charcoal photo booth banh mi twee pop-up lomo. Prism actually fixie, mixtape intelligentsia salvia activated charcoal retro fanny pack pitchfork paleo."
+}
+
+
+
+]
 
 
 
 
 
-function Loom({ match }) {
+function ProjectContent({ match }) {
     const loom = loom_data.find(({ id }) => id === match.params.topicId)
 
     return (
@@ -78,19 +94,97 @@ function Loom({ match }) {
 }
 
 
+const options = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' }
+  ]
+  
+ 
 export default function Looms({ match }) {
+    console.log("HELLO Im A MACHINE")
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems, {});
+
+        elems.forEach(function(el) {
+            $(elems).on('change', updateAction)
+          })
+        
+          function updateAction() {
+            var selection = $(this).val();
+          }
+
+    });
+
+    function handleSelection()
+     {
+        console.log(document.getElementById("CC"))
+        console.log("I MADE A NEW CHOICE!!!")
+        
+        var instance = M.FormSelect.getInstance(document.getElementById("categories"));
+        var instance2 = M.FormSelect.getInstance(document.getElementById("action"));
+
+        console.log(instance.getSelectedValues())
+        console.log(instance2.getSelectedValues())
+
+        var selected_category = instance.getSelectedValues()[0]
+        if (selected_category == "2") {
+            console.log("LOOMG")
+            document.getElementsByClassName("loomOneLink")[0].click()
+        }
+
+        if (selected_category == "4") {
+            console.log("LOOMG")
+            document.getElementsByTagName("a")[2].click()
+        }
+      
+    }
+
+    function change() {
+        console.log("GOT A CHANGEEEE")
+    }
+
     return (
         <div>
-            <div class="stationText">
-                <h3 class="center-align">Machines As Humans</h3>
-                <p class="center-align">I'm baby normcore disrupt palo santo tacos bicycle rights waistcoat food truck hammock vaporware cred polaroid listicle fam af. Microdosing wolf unicorn, activated charcoal freegan chambray chartreuse cornhole prism. Prism neutra scenester, venmo asymmetrical chillwave messenger bag photo booth kinfolk cornhole 3 wolf moon. Copper mug umami chia seitan freegan meditation adaptogen blog microdosing readymade. Vexillologist austin glossier helvetica, lo-fi keffiyeh seitan humblebrag thundercats try-hard whatever. +1 schlitz DIY wayfarers, craft beer blog messenger bag hell of actually.</p>
-            </div>
-            <div class="placeholder">
-                {/* <img src={loom1} alt="Logo" />; */}
+            <h3 class="center-align">Machines As Humans</h3>
+
+            
+            <div className="row">
+                <div className="col s2">
+                    <h5>I want to learn About</h5>  </div>
+                <div id="CC" class="select-wrapper col s2">
+                    <select id="categories" onChange={handleSelection}>
+                    <option value="0" ></option>
+                        <option value="1" >Textiles</option>
+                        <option value="2">Computers</option>
+                        <option value="4">Programming Languages</option>
+                    </select>
+                </div>
+                <div className="col s2">
+                    <h5>That</h5>  </div>
+                <div class="input-field col s2">
+                    <select id="action"  onChange={handleSelection}>
+                        <option value="" disabled selected></option>
+                        <option value="A">Use</option>
+                        <option value="B">Change</option>
+                        <option value="C">Understand</option>
+                    </select>
+                </div>
+                <div class="input-field col s2">
+                <Select onChange={change} options={options} />
+                </div>
+                <div className="button-nav col s1"><p>Show Me More</p></div>
+
+
+            </div> <Link className="loomOneLink" to="/machinesashumans/loom-one">LOOM ONE</Link>
+            {/* <div class="placeholder">
+             
 
                 <h3 class="center-align">PLACEHOLDER CONTENT</h3>
 
-                {/* <ul class="placeholderList">
+                <ul class="placeholderList">
                     {loom_data.map(({ name, id }) => (
 
 
@@ -102,11 +196,14 @@ export default function Looms({ match }) {
 
 
                     ))}
-                </ul> */}
-            </div>
+                            <Link to="/machinesashumans/loom-one">LOOM ONE</Link>
 
 
-            <Route path={`${match.path}/:topicId`} component={Loom} />
+                </ul>
+            </div> */}
+
+            {/* <Route path="/machinesashumans/loom-one" component={ProjectContent} /> */}
+            <Route path={`${match.path}/:topicId`} component={ProjectContent} />
         </div>
     )
 }

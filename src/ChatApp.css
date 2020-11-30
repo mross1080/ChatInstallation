@@ -1,0 +1,54 @@
+body{
+    background-color: black;
+    list-style-type: none;
+
+}
+
+.testimonyLink {
+    height: 80px;
+    margin: 30px;
+    border: 2px solid white;
+    border-radius: 5px;
+    list-style-type: none;
+    /* padding: 20px; */
+    padding-right: 2px;
+    color: white;
+    font-size: 20px;
+}
+
+
+.testimony {
+    color: white;
+}
+
+a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+  }
+
+  nav {
+      background-color: black;
+  }
+
+  .navArrowRight{
+      align-content: right;
+  }
+
+  .message {
+      display: flex;
+      flex-direction: column;
+      min-height: 5vh;
+    /* height: 30px; */
+    margin: 30px;
+    border: 2px solid white;
+    border-radius: 5px;
+    list-style-type: none;
+    padding: 10px;
+    padding-right: 2px;
+    color: white;
+    font-size: 20px;
+    flex-basis: auto;
+  }
+  .msgRight {
+      justify-content: space-between;
+  }

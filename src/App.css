@@ -87,3 +87,8 @@ a:hover {
     height: 300px;
     width: 400px;
 } */
+
+
+select{
+    position: sticky;
+}
