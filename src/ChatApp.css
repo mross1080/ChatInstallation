@@ -34,9 +34,15 @@ a {
       align-content: right;
   }
 
-  .message {
-      display: flex;
+.messagesContainer {
+    display: flex;
       flex-direction: column;
+      flex-basis: auto;
+
+}
+
+  .message {
+  
       min-height: 5vh;
     /* height: 30px; */
     margin: 30px;
@@ -47,7 +53,6 @@ a {
     padding-right: 2px;
     color: white;
     font-size: 20px;
-    flex-basis: auto;
   }
   .msgRight {
       justify-content: space-between;
