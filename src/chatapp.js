@@ -9,15 +9,13 @@ import {
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
 import './ChatApp.css';
-import TestimonyDB from "./TestimonyDB"
-
-
+import TestimonyDB from "./TestimonyDB.json"
 
 const Testimony = ({ match }) => {
 
     console.log(match)
     console.log("IN RESOURCEEEEE")
-    const testimony = TestimonyDB.all()
+    const testimony = TestimonyDB
         .find(({ id }) => id === match.params.testimonyGroupId)
         .data[Number(match.params.testimonyId)]
 
@@ -53,7 +51,7 @@ const Testimony = ({ match }) => {
 }
 
 const TestimonyGroup = ({ match }) => {
-    const testimonies = TestimonyDB.all().find((function (t) {
+    const testimonies = TestimonyDB.find((function (t) {
         console.log(t.id + " versus " + match.params.testimonyGroupId)
         // TODO refactor this 
         if (match.params.testimonyGroupId === t.id) {
@@ -106,7 +104,7 @@ class Chats extends React.PureComponent {
     constructor(props) {
         super(props);
         console.log("topics constructor")
-        console.log(TestimonyDB.all())
+        console.log(TestimonyDB)
     }
 
     render() {
@@ -119,7 +117,7 @@ class Chats extends React.PureComponent {
                     {
 
 
-                        TestimonyDB.all().map(({ name, id }) => (
+                        TestimonyDB.map(({ name, id }) => (
                             <li className="testimonyLink" key={name}>
 
                                 <div class="row">
