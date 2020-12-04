@@ -4,9 +4,25 @@ body{
 
 }
 
+@font-face {
+  font-family: AGaramonPro;
+  src: url(/assets/AGaramondPro-Regular.otf);
+}
+
+@font-face {
+  font-family: RubikOne;
+  src: url(/assets/RubikOne-Regular.ttf);
+}
+
+body{
+font-family: AGaramonPro;
+color:white;
+}
+
+
 .testimonyLink {
-    height: 80px;
-    margin: 30px;
+    height: 100px;
+    margin: 23px;
     border: 2px solid white;
     border-radius: 5px;
     list-style-type: none;
@@ -20,6 +36,7 @@ body{
 .testimony {
     color: white;
 }
+
 
 a {
     color: inherit; /* blue colors for links too */
@@ -48,16 +65,27 @@ a {
 
   .message {
     min-height: 5vh;
-    /* height: 30px; */
     margin: 30px;
     border: 2px solid white;
     border-radius: 5px;
     list-style-type: none;
-    padding: 15px;
-    /* padding-right: 2px; */
+    /* padding: 4px; */
     color: white;
     font-size: 20px;
+    max-width: 50vw;
+    min-width: 10vw;
+    padding-right: 20px;
+    padding-left: 20px;
   }
+
+  .msgImage {
+    min-height: 5vh;
+    margin: 30px;
+    border: 2px solid white;
+    border-radius: 5px;
+    list-style-type: none;
+  }
+
   .msgLeftContent {
     background-color: white;
     color: black;
@@ -66,3 +94,38 @@ a {
   .msgRight {
     justify-content: flex-end;
   }
+
+  img {
+      height: 30vw;
+      width:40vw;
+  }
+
+
+  .siteTitle{
+    font-family: Arial !important;
+    font-weight: 900;
+    font-size: 20px;
+  }
+
+  .navElement {
+    font-size: 22px;
+  }
+
+  .arrow{
+    font-size: 25px;
+    margin-top: 3px
+  }
+
+  .question {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    margin: 30px;
+    font-weight: 900;
+
+  }
+
+  
+.optionText {
+  font-size: 30px;
+  margin-top: 26px;
+}
