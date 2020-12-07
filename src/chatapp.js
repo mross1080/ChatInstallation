@@ -118,6 +118,18 @@ const Testimony = ({ match }) => {
     // other props here
   />
 
+    
+<AudioPlayer
+    autoplay
+    showJumpControls={false}
+    customVolumeControls={[]} 
+    customAdditionalControls={[]}
+    src="PTT-20201001-WA0004.opus"
+
+    onPlay={e => console.log("onPlay")}
+    // other props here
+  />
+
 
             <div class="messagesContainer">
                 <Message msgType="" />
