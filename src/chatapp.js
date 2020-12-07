@@ -17,6 +17,9 @@ import { NavBar } from './Navbar';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 
+import mp3_file from './assets/a.opus';
+
+
 
 const Testimony = ({ match }) => {
 
@@ -112,7 +115,7 @@ const Testimony = ({ match }) => {
     showJumpControls={false}
     customVolumeControls={[]} 
     customAdditionalControls={[]}
-    src="/PTT-20201001-WA0004.opus"
+    src={mp3_file}
 
     onPlay={e => console.log("onPlay")}
     // other props here
@@ -124,7 +127,7 @@ const Testimony = ({ match }) => {
     showJumpControls={false}
     customVolumeControls={[]} 
     customAdditionalControls={[]}
-    src="PTT-20201001-WA0004.opus"
+    src={mp3_file}
 
     onPlay={e => console.log("onPlay")}
     // other props here
