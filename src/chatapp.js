@@ -115,7 +115,7 @@ const Testimony = ({ match }) => {
     showJumpControls={false}
     customVolumeControls={[]} 
     customAdditionalControls={[]}
-    src="https://github.com/mross1080/ChatInstallation/blob/master/public/00000033-AUDIO-2020-11-21-18-49-47.opus?raw=true"
+    src="https://mrossproject2019.s3-sa-east-1.amazonaws.com/PTT-20201001-WA0001.opus"
 
     onPlay={e => console.log("onPlay")}
     // other props here
@@ -124,7 +124,7 @@ const Testimony = ({ match }) => {
     
 <h1>Hello, audio player!</h1>
         <AudioPlayer
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+          src="https://mrossproject2019.s3-sa-east-1.amazonaws.com/PTT-20201001-WA0009.opus"
           // Try other props!
         />
 
