@@ -14,6 +14,9 @@ import M from 'materialize-css/dist/js/materialize.min.js';
 import './ChatApp.css';
 import TestimonyDB from "./TestimonyDB.json"
 import { NavBar } from './Navbar';
+import AudioPlayer from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
+
 
 const Testimony = ({ match }) => {
 
@@ -103,7 +106,17 @@ const Testimony = ({ match }) => {
         <div>
 
             <NavBar></NavBar>
+            
+            <AudioPlayer
+    autoplay
+    showJumpControls={false}
+    customVolumeControls={[]} 
+    customAdditionalControls={[]}
+    src="/PTT-20201001-WA0004.opus"
 
+    onPlay={e => console.log("onPlay")}
+    // other props here
+  />
 
 
             <div class="messagesContainer">
