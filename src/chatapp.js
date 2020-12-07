@@ -111,7 +111,7 @@ const Testimony = ({ match }) => {
             <NavBar></NavBar>
             
             <AudioPlayer
-    
+    autoplay={false}
     showJumpControls={false}
     customVolumeControls={[]} 
     customAdditionalControls={[]}
@@ -123,7 +123,7 @@ const Testimony = ({ match }) => {
 
     
 <AudioPlayer
-    
+    autoplay={false}
     showJumpControls={false}
     customVolumeControls={[]} 
     customAdditionalControls={[]}
