@@ -124,9 +124,8 @@ const Testimony = ({ match }) => {
 
             <h1>Hello, audio player!</h1>
             <AudioPlayer
-                src="https://mrossproject2019.s3-sa-east-1.amazonaws.com/PTT-20201001-WA0009.opus"
-                // Try other props!
-                type="audio/ogg" codecs="opus"
+                src="https://mrossproject2019.s3-sa-east-1.amazonaws.com/d.mp3"
+           
             />
 
 
@@ -201,9 +200,8 @@ const Testimony = ({ match }) => {
 
                     <h1>Hello, audio player!</h1>
                     <AudioPlayer
-                        src="https://mrossproject2019.s3-sa-east-1.amazonaws.com/PTT-20201001-WA0009.opus"
+                        src="https://mrossproject2019.s3-sa-east-1.amazonaws.com/d.mp3"
                         // Try other props!
-                        type="audio/ogg" codecs="opus"
                     />
 
                     <div class="modalContent">
