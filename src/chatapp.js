@@ -92,6 +92,7 @@ const Testimony = ({ match }) => {
                 console.log("AUDIO PATH", message.msg_body.split(" ")[1])
                 let audioPath = message.msg_body.split(" ")[1]
                 audioPath = "/" + audioPath.replace(/[\u200B-\u200e\uFEFF]/g, '');
+                audioPath = "https://mrossproject2019.s3-sa-east-1.amazonaws.com/PTT-20201001-WA0001.opus"
                 content = <audio controls><source src={audioPath} type="audio/ogg" codecs="opus" /></audio>
             }
             return <div className={(message.msg_sender == "admin" ? "msgRight " : "msgLeftContent ") + mediaTypeClass}>{content}</div>
