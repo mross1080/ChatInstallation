@@ -116,7 +116,7 @@ const Testimony = ({ match }) => {
     customVolumeControls={[]} 
     customAdditionalControls={[]}
     src="https://mrossproject2019.s3-sa-east-1.amazonaws.com/PTT-20201001-WA0001.opus"
-
+    type="audio/ogg" codecs="opus"
     onPlay={e => console.log("onPlay")}
     // other props here
   />
@@ -126,6 +126,7 @@ const Testimony = ({ match }) => {
         <AudioPlayer
           src="https://mrossproject2019.s3-sa-east-1.amazonaws.com/PTT-20201001-WA0009.opus"
           // Try other props!
+          type="audio/ogg" codecs="opus"
         />
 
 
