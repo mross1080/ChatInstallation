@@ -122,16 +122,11 @@ const Testimony = ({ match }) => {
   />
 
     
-<AudioPlayer
-    autoplay={false}
-    showJumpControls={false}
-    customVolumeControls={[]} 
-    customAdditionalControls={[]}
-    src={mp3_file}
-
-    onPlay={e => console.log("onPlay")}
-    // other props here
-  />
+<h1>Hello, audio player!</h1>
+        <AudioPlayer
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+          // Try other props!
+        />
 
 
             <div class="messagesContainer">
