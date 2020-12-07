@@ -20,17 +20,6 @@ color:white;
 }
 
 
-.testimonyLink {
-    height: 100px;
-    margin: 23px;
-    border: 2px solid white;
-    border-radius: 5px;
-    list-style-type: none;
-    /* padding: 20px; */
-    padding-right: 2px;
-    color: white;
-    font-size: 20px;
-}
 
 
 .testimony {
@@ -95,27 +84,40 @@ a {
     justify-content: flex-end;
   }
 
-  img {
+  .msgImg {
       height: 30vw;
       width:40vw;
   }
 
 
-  .siteTitle{
-    font-family: Arial !important;
-    font-weight: 900;
-    font-size: 20px;
-  }
 
-  .navElement {
-    font-size: 22px;
-  }
+  .testimonyLink {
+    height: 100px;
+    margin: 23px;
+    border: 2px solid white;
+    border-radius: 5px;
+    list-style-type: none;
+    /* padding: 20px; */
+    padding-right: 2px;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
 
   .arrow{
     font-size: 25px;
-    margin-top: 3px
+    margin-top: 3px;
+  
   }
 
+  .iconContainer{
+    justify-content: end;
+    flex-shrink: 3;
+    align-self: flex-end;
+    margin-left: auto;
+  }
   .question {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 28px;
@@ -128,4 +130,71 @@ a {
 .optionText {
   font-size: 30px;
   margin-top: 26px;
+  justify-content: start;
+  flex-shrink: 3;
+  margin-left: 20px;
+}
+
+.linkActive {
+  border-bottom: 2px solid white;
+}
+
+.nav-wrapper{
+  display: flex;
+  flex-direction: row;
+  margin: 0px 20px;
+}
+
+
+.siteTitle{
+  font-family: Arial !important;
+  font-weight: 900;
+  font-size: 20px;
+  margin-right: auto;
+}
+
+.navElement {
+  margin: 0px 20px;
+  font-size: 20px;
+}
+
+.modalContent {
+  /* display: flex;
+  background-color: black;
+  flex-direction: column;
+  max-height: 500px; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 20px);
+  height: calc(80% - 20px);
+
+  margin: 10px;
+}
+
+
+
+.modalExit {
+  margin-left: auto;
+}
+
+.modalImg {
+
+  display: block;
+  /* object-fit: cover; */
+  width: 100%;
+  height: 100%; /* set to 'auto' in IE11 to avoid distortions */
+
+}
+
+.bottomNav {
+  display: flex;
+}
+
+.centerText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
