@@ -115,7 +115,7 @@ const Testimony = ({ match }) => {
     showJumpControls={false}
     customVolumeControls={[]} 
     customAdditionalControls={[]}
-    src={mp3_file}
+    src="https://github.com/mross1080/ChatInstallation/blob/master/public/00000033-AUDIO-2020-11-21-18-49-47.opus?raw=true"
 
     onPlay={e => console.log("onPlay")}
     // other props here
