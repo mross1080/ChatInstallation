@@ -92,7 +92,7 @@ const Testimony = ({ match }) => {
                 console.log("AUDIO PATH", message.msg_body.split(" ")[1])
                 let audioPath = message.msg_body.split(" ")[1]
                 audioPath = "/" + audioPath.replace(/[\u200B-\u200e\uFEFF]/g, '');
-                content = <audio controls><source src={audioPath} type="audio/ogg" codecs="opus"/></audio>
+                content = <audio controls><source src={audioPath} type="audio/ogg" codecs="opus" /></audio>
             }
             return <div className={(message.msg_sender == "admin" ? "msgRight " : "msgLeftContent ") + mediaTypeClass}>{content}</div>
 
@@ -109,25 +109,25 @@ const Testimony = ({ match }) => {
         <div>
 
             <NavBar></NavBar>
-            
-            <AudioPlayer
-    autoplay={false}
-    showJumpControls={false}
-    customVolumeControls={[]} 
-    customAdditionalControls={[]}
-    src="https://mrossproject2019.s3-sa-east-1.amazonaws.com/PTT-20201001-WA0001.opus"
-    type="audio/ogg" codecs="opus"
-    onPlay={e => console.log("onPlay")}
-    // other props here
-  />
 
-    
-<h1>Hello, audio player!</h1>
-        <AudioPlayer
-          src="https://mrossproject2019.s3-sa-east-1.amazonaws.com/PTT-20201001-WA0009.opus"
-          // Try other props!
-          type="audio/ogg" codecs="opus"
-        />
+            <AudioPlayer
+                autoplay={false}
+                showJumpControls={false}
+                customVolumeControls={[]}
+                customAdditionalControls={[]}
+                src="https://mrossproject2019.s3-sa-east-1.amazonaws.com/PTT-20201001-WA0001.opus"
+                type="audio/ogg" codecs="opus"
+                onPlay={e => console.log("onPlay")}
+            // other props here
+            />
+
+
+            <h1>Hello, audio player!</h1>
+            <AudioPlayer
+                src="https://mrossproject2019.s3-sa-east-1.amazonaws.com/PTT-20201001-WA0009.opus"
+                // Try other props!
+                type="audio/ogg" codecs="opus"
+            />
 
 
             <div class="messagesContainer">
@@ -152,14 +152,14 @@ const Testimony = ({ match }) => {
                 <div class="bottomNav">
                     <Link to={`${previousPage}`}>
                         <div className="navArrowLeft"><i class="large material-icons col s1">        chevron_left</i>
-                        
+
 
                         </div>
-                        
+
                     </Link>
                     <Link className="centerText" to={`${previousPage}`}>
-                    <p>Anterior</p>
-                        
+                        <p>Anterior</p>
+
                     </Link>
                     <Link className="modalExit centerText" to={`${nextPage}`}>
                         <p>Siguiente</p>
@@ -174,24 +174,43 @@ const Testimony = ({ match }) => {
                 </div>
             </div>
             <Modal
-            style={{
-                overlay: {
-                  backgroundColor: 'black'
-                },
-                content: {
-                    backgroundColor: 'black',
-                    border: "none"
-                }
-              }}
+                style={{
+                    overlay: {
+                        backgroundColor: 'black'
+                    },
+                    content: {
+                        backgroundColor: 'black',
+                        border: "none"
+                    }
+                }}
                 isOpen={showModal}
                 contentLabel="Minimal Modal Example"
             >
                 <div className="container">
-                <div class="modalContent">
-                    {/* <button onClick={closeModal}>Close Modal</button> */}
-                    <i  onClick={closeModal} class="medium material-icons modalExit">clear</i>
-                    <img className="modalImg" src={modalImgLocation} alt="logo" />
-                </div>
+                    <AudioPlayer
+                        autoplay={false}
+                        showJumpControls={false}
+                        customVolumeControls={[]}
+                        customAdditionalControls={[]}
+                        src="https://mrossproject2019.s3-sa-east-1.amazonaws.com/PTT-20201001-WA0001.opus"
+                        type="audio/ogg" codecs="opus"
+                        onPlay={e => console.log("onPlay")}
+                    // other props here
+                    />
+
+
+                    <h1>Hello, audio player!</h1>
+                    <AudioPlayer
+                        src="https://mrossproject2019.s3-sa-east-1.amazonaws.com/PTT-20201001-WA0009.opus"
+                        // Try other props!
+                        type="audio/ogg" codecs="opus"
+                    />
+
+                    <div class="modalContent">
+                        {/* <button onClick={closeModal}>Close Modal</button> */}
+                        <i onClick={closeModal} class="medium material-icons modalExit">clear</i>
+                        <img className="modalImg" src={modalImgLocation} alt="logo" />
+                    </div>
                 </div>
             </Modal>
 
