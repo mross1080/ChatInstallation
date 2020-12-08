@@ -17,7 +17,6 @@ import { NavBar } from './Navbar';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 
-import mp3_file from './assets/a.opus';
 
 
 
@@ -95,9 +94,21 @@ const Testimony = ({ match }) => {
 
                 console.log("AUDIO PATH ", audioPath)
 
-                content = <audio controls><source src={audioPath} type="audio/mp3" /></audio>
+                // content = <audio controls><source src={audioPath} type="audio/mp3" /></audio>
+                content = <AudioPlayer
+                autoplay={false}
+                showJumpControls={false}
+                customVolumeControls={[]}
+                customAdditionalControls={[]}
+                src={audioPath}
+                type="audio/ogg" codecs="opus"
+                onPlay={e => console.log("onPlay")}
+                layout="horizontal-reverse"
+
+            // other props here
+            />
             }
-            return <div className={(message.msg_sender == "admin" ? "msgRight " : "msgLeftContent ") + mediaTypeClass}>{content}</div>
+            return <div className={(msgType == "audio" ? "audioMsg " : " ") +  (message.msg_sender == "admin" ? "msgRight " : "msgLeftContent ") + mediaTypeClass}>{content}</div>
 
 
         } catch (e) {
@@ -113,23 +124,6 @@ const Testimony = ({ match }) => {
 
             <NavBar></NavBar>
 
-            <AudioPlayer
-                autoplay={false}
-                showJumpControls={false}
-                customVolumeControls={[]}
-                customAdditionalControls={[]}
-                src="https://mrossproject2019.s3-sa-east-1.amazonaws.com/PTT-20201001-WA0001.opus"
-                type="audio/ogg" codecs="opus"
-                onPlay={e => console.log("onPlay")}
-            // other props here
-            />
-
-
-            <h1>Hello, audio player!</h1>
-            <AudioPlayer
-                src="https://mrossproject2019.s3-sa-east-1.amazonaws.com/d.mp3"
-           
-            />
 
 
             <div class="messagesContainer">
@@ -189,23 +183,7 @@ const Testimony = ({ match }) => {
                 contentLabel="Minimal Modal Example"
             >
                 <div className="container">
-                    <AudioPlayer
-                        autoplay={false}
-                        showJumpControls={false}
-                        customVolumeControls={[]}
-                        customAdditionalControls={[]}
-                        src="https://mrossproject2019.s3-sa-east-1.amazonaws.com/PTT-20201001-WA0001.opus"
-                        type="audio/ogg" codecs="opus"
-                        onPlay={e => console.log("onPlay")}
-                    // other props here
-                    />
-
-
-                    <h1>Hello, audio player!</h1>
-                    <AudioPlayer
-                        src="https://mrossproject2019.s3-sa-east-1.amazonaws.com/d.mp3"
-                        // Try other props!
-                    />
+     
 
                     <div class="modalContent">
                         {/* <button onClick={closeModal}>Close Modal</button> */}
@@ -227,12 +205,15 @@ const TestimonyGroup = ({ match }) => {
     const testimonies = TestimonyDB.find(function (t) {
         return match.params.testimonyGroupId === t.id;
     })
-    console.log("topic")
+    console.log("Testimony : ", testimonies)
     console.log(testimonies)
     console.log(match)
     console.log(match.params.testimonyGroupId)
 
     return (
+
+        <div>
+            <NavBar></NavBar>
 
         <div class="wrapper container">
             {/* <nav>
@@ -242,10 +223,8 @@ const TestimonyGroup = ({ match }) => {
                 </div>
             </nav> */}
 
-            <NavBar></NavBar>
             <div>
-                <p class="question">¿Volveria usted a vivir en una isla
-sin frontera y por qué?</p>
+        <p class="question">{testimonies.question}</p>
             </div>
             <div class="testimonyCategorites">
 
@@ -271,7 +250,7 @@ sin frontera y por qué?</p>
                     }
                 </ul>
             </div>
-        </div >
+        </div ></div>
 
     )
 }

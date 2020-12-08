@@ -198,3 +198,8 @@ a {
   align-items: center;
   justify-content: center;
 }
+
+
+.audioMsg{
+  min-width: 40vw !important;
+}

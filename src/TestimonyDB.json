@@ -2,6 +2,7 @@
     {
        "id":"vivir_en_una_isla",
        "name":" Vivir en una isla",
+       "question" : "¿Volveria usted a vivir en una isla sin frontera y por qué?",
        "data":[
           [
              {
@@ -1633,6 +1634,7 @@
     {
        "id":"colon",
        "name":" Col\u00f3n",
+       "question" : "¿Por qué cree usted que la virgen de las mercedes protegió a los españoles y no a los indigenas en la batalla del santo cerro en 1495?",
        "data":[
           [
              {
@@ -1736,6 +1738,7 @@
     {
        "id":"la_virgen_de_las_mercedes",
        "name":" La Virgen de las Mercedes",
+       "question" : "¿Qué aprendió usted sobre Colón en la escuela que considere es la historia verídica?",
        "data":[
           [
              {
@@ -2686,6 +2689,7 @@
     {
        "id":"personas_esclavizadas",
        "name":" Personas Esclavizadas",
+       "question" : "¿Qué sabe usted sobre las personas esclavizadas en la Rep. Dom.?",
        "data":[
           [
              {
@@ -2876,6 +2880,7 @@
     {
        "id":"mangu",
        "name":" Mang\u00fa",
+       "question" :"¿Usted come platano? ¿Sabía usted que el mangú es una comida popularizada por las personas negras esclavidas en Rep. Dom.?",
        "data":[
           [
              {
@@ -3123,6 +3128,7 @@
     {
        "id":"bachata,_merengue,_salsa",
        "name":" Bachata, Merengue, Salsa",
+       "question" : "¿Cuándo y dónde baila usted música con influencias Africanas; Salsa, Merengue, Bachata?",
        "data":[
           [
              {
@@ -3248,6 +3254,7 @@
     {
        "id":"cedula_vieja",
        "name":" Cedula Vieja",
+       "question" : "En su vieja cédula, ¿Fue usted denominado como Indio? ¿Por qué?",
        "data":[
           [
              {
@@ -3701,6 +3708,7 @@
     {
        "id":"v_centenario",
        "name":" V Centenario",
+       "question" : "¿Por qué cree usted que la celebración del V Centenario fue importante para el gobierno y los empresarios de Rep. Dom.?",
        "data":[
           [
              {
@@ -3749,6 +3757,7 @@
     {
        "id":"pena_gomez",
        "name":" Pe\u00f1a Gomez",
+       "question" : "¿Cree usted que Peña Gómez tenia derecho a ser presidente, y por qué?",
        "data":[
           [
              {
