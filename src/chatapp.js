@@ -11,12 +11,11 @@ import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
-import './ChatApp.css';
 import TestimonyDB from "./TestimonyDB.json"
 import { NavBar } from './Navbar';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
-
+import './ChatApp.css';
 
 
 
