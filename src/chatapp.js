@@ -126,7 +126,7 @@ const Testimony = ({ match }) => {
 
 
 
-            <div class="messagesContainer">
+            <div class="messagesContainer container">
                 <Message msgType="" />
                 <ul>
                     {
@@ -234,7 +234,7 @@ const TestimonyGroup = ({ match }) => {
                             <li className="testimonyLink" key={index}>
                                 <Link to={`${match.params.testimonyGroupId}/${index}`}>
                                     <div class="">
-                                        <p className="col s10 optionText"><strong>Testimonio </strong> {index} </p>
+                                        <p className="col s10 optionText"><strong>Testimonio </strong> {index + 1} </p>
 
 
                                     </div>

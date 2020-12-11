@@ -31,7 +31,7 @@ export function NavBar(props) {
         setMenuState(newMenuState)
     }
 
-    return (<div><nav className={'no-shadows '}>
+    return (<div className="container"><nav className={'no-shadows '}>
         <div className="nav-wrapper">
 
       <div className="col s5 center-align siteTitle"> <Link to="/chats">¡SE BUSCAN TESTIGOS!</Link></div>
