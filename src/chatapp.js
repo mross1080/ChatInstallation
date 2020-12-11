@@ -76,6 +76,7 @@ const Testimony = ({ match }) => {
         try {
 
             let msgType = props.msg.msg_file_type
+            
             if (msgType == "text") {
                 content = <p>{props.msg.msg_body}</p>
             } else if (msgType == "image") {
