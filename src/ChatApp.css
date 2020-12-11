@@ -207,4 +207,19 @@ a {
 
 .audioMsg{
   min-width: 40vw !important;
+  
+}
+
+.audioDark {
+  background-color: black !important ;
+  color: white !important
+
+}
+
+.rhap_time{
+  color: inherit
+}
+
+.rhap_container{
+  box-shadow: none;
 }

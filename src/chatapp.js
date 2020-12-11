@@ -76,7 +76,7 @@ const Testimony = ({ match }) => {
         try {
 
             let msgType = props.msg.msg_file_type
-
+            let position = message.msg_sender == "admin" ? "msgRight " : "msgLeftContent "
             if (msgType == "text") {
                 content = <p>{props.msg.msg_body}</p>
             } else if (msgType == "image") {
@@ -92,6 +92,13 @@ const Testimony = ({ match }) => {
                 let audioPath = message.msg_body.split(" ")[1]
                 audioPath = "/" + audioPath.replace(/[\u200B-\u200e\uFEFF]/g, '');
                 audioPath = audioPath.split(".")[0] + ".mp3"
+                let playerClass = ""
+                if (position == "msgRight ") {
+                    playerClass = "audioDark"
+                }
+                
+                console.log(position)
+                console.log(playerClass)
 
                 console.log("AUDIO PATH ", audioPath)
 
@@ -105,6 +112,7 @@ const Testimony = ({ match }) => {
                 type="audio/ogg" codecs="opus"
                 onPlay={e => console.log("onPlay")}
                 layout="horizontal-reverse"
+                className={playerClass}
 
             // other props here
             />
