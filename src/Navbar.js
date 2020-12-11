@@ -5,20 +5,24 @@ import { Switch, Route, NavLink, useLocation, Link } from "react-router-dom";
 
 export function NavBar(props) {
 
-
+    console.log("Props", props)
+    console.log(props["testiomnyGroupUrl"])
 
     const [menuState, setMenuState] = useState(false)
     let preguntasActive = ""
     let videoActive = ""
     let testimoniesActive = ""
 
+    
+
 
     console.log("Location : ", window.location.pathname)
+    console.log("/chats/" + props["testiomnyGroupUrl"])
     if (window.location.pathname =="/chats") {
         preguntasActive = "linkActive"
     } else     if (window.location.pathname =="/video") {
         videoActive = "linkActive"
-    } else {
+    } else if(window.location.pathname == "/chats/" + props["testiomnyGroupUrl"]) {
         testimoniesActive = "linkActive"
     } 
 
@@ -39,7 +43,7 @@ export function NavBar(props) {
 
       <div className={"col s2 center-align navElement "}> <Link to="/chats" className={preguntasActive} >Preguntas</Link> </div>
 
-      <div className="col s2 center-align navElement"> <span className={testimoniesActive} >Testimonios </span> </div>
+      <div className="col s2 center-align navElement"> <Link to={`/chats/${props["testiomnyGroupUrl"]}`} className={preguntasActive} ><span className={testimoniesActive} >Testimonios </span> </Link> </div>
 
 
 

@@ -47,12 +47,12 @@ const Testimony = ({ match }) => {
         .find(({ id }) => id === match.params.testimonyGroupId)
         .data.length
 
-    console.log("IN RESOURCE")
-    console.log(match)
+    console.log("IN id")
+    let testimonyGroup = match.params.testimonyGroupId
+    console.log(match.params.testimonyGroupId)
 
 
     console.log(testimony)
-    console.log(match)
     let previousPage = numberId - 1
     let nextPage = numberId + 1
 
@@ -123,7 +123,7 @@ const Testimony = ({ match }) => {
     return (
         <div>
 
-            <NavBar></NavBar>
+            <NavBar testiomnyGroupUrl={testimonyGroup}></NavBar>
 
 
 
@@ -214,7 +214,7 @@ const TestimonyGroup = ({ match }) => {
     return (
 
         <div>
-            <NavBar></NavBar>
+            <NavBar testiomnyGroupUrl={match.params.testimonyGroupId}></NavBar>
 
         <div class="wrapper container">
             {/* <nav>
