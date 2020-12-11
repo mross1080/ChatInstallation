@@ -76,7 +76,7 @@ const Testimony = ({ match }) => {
         try {
 
             let msgType = props.msg.msg_file_type
-            
+
             if (msgType == "text") {
                 content = <p>{props.msg.msg_body}</p>
             } else if (msgType == "image") {
@@ -118,7 +118,7 @@ const Testimony = ({ match }) => {
             return <p></p>
         }
     }
-
+    window.scrollTo(0, 0)
 
     return (
         <div>
@@ -293,6 +293,12 @@ class Chats extends React.PureComponent {
         this.currentLocation = ""
 
     }
+
+    // onUpdate={window.scrollTo(0, 0)}
+
+componentDidMount() {
+  window.scrollTo(0, 0)
+}
 
 
     componentWillReceiveProps(props) {
