@@ -232,20 +232,18 @@ const TestimonyGroup = ({ match }) => {
                 <ul >
                     {
                         testimonies.data.map((value, index) =>
+                        <Link to={`${match.params.testimonyGroupId}/${index}`}>
                             <li className="testimonyLink" key={index}>
-                                <Link to={`${match.params.testimonyGroupId}/${index}`}>
-                                    <div class="">
+                              
+                                   
                                         <p className="col s10 optionText"><strong>Testimonio </strong> {index + 1} </p>
 
 
-                                    </div>
-                                </Link>
+                                   
+                           
                                 <div className="iconContainer"> <i class="large material-icons arrow col offset-s1 s1">        chevron_right</i>
                                 </div>
-
-
-
-                            </li>
+                            </li>       </Link>
                         )
 
                     }
@@ -325,16 +323,17 @@ componentDidMount() {
 
 
                                 TestimonyDB.map(({ name, id }) => (
+                                    <Link to={`chats/${id}`}>
                                     <li className="testimonyLink" key={name}>
 
-                                        <Link to={`chats/${id}`}>
+                                     
                                             <p className="col s10 optionText"><strong>Testimonios: </strong> {name} </p>
-                                        </Link>
+                                  
 
 
                                         <div className="iconContainer"> <i class="large material-icons arrow col offset-s1 s1">        chevron_right</i>
                                         </div>
-                                    </li>
+                                    </li>      </Link>
                                 ))
 
                             }
