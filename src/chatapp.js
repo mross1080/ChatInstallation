@@ -35,7 +35,7 @@ const Testimony = ({ match }) => {
         setShowModal(false)
     }
 
-    let numberId = Number(match.params.testimonyId)
+    let numberId = (Number(match.params.testimonyId) - 1)
     console.log(match)
     console.log("IN RESOURCEEEEE")
     const testimony = TestimonyDB
@@ -239,8 +239,8 @@ const TestimonyGroup = ({ match }) => {
                 <ul >
                     {
                         testimonies.data.map((value, index) =>
-                        <Link to={`${match.params.testimonyGroupId}/${index}`}>
-                            <li className="testimonyLink" key={index}>
+                        <Link to={`${match.params.testimonyGroupId}/${index + 1 }`}>
+                            <li className="testimonyLink" key={index + 1}>
                               
                                    
                                         <p className="col s10 optionText"><strong>Testimonio </strong> {index + 1} </p>
