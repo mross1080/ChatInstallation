@@ -43,7 +43,7 @@ export function NavBar(props) {
 
       <div className={"col s2 center-align navElement "}> <Link to="/chats" className={preguntasActive} >Preguntas</Link> </div>
 
-      <div className="col s2 center-align navElement"> <Link to={`/chats/${props["testiomnyGroupUrl"]}`} className={preguntasActive} ><span className={testimoniesActive} >Testimonios </span> </Link> </div>
+      <div className="col s2 center-align navElement"> <Link to={`/chats/${props["testiomnyGroupUrl"]}`} className={testimoniesActive} ><span className={testimoniesActive} >Testimonios </span> </Link> </div>
 
 
 
