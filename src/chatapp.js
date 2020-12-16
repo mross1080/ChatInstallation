@@ -52,9 +52,11 @@ const Testimony = ({ match }) => {
 
 
     console.log(testimony)
+    numberId = (Number(match.params.testimonyId))
+
+    console.log("NUMBER ID IS ", numberId)
     let previousPage = numberId - 1
     let nextPage = numberId + 1
-
     if (numberId == 0) {
         previousPage = testimoniesForGroup - 1
     }
@@ -83,6 +85,8 @@ const Testimony = ({ match }) => {
                 console.log(c)
 
                 var imgLocation = c.replace(/[\u200B-\u200e\uFEFF]/g, '');
+                imgLocation = imgLocation.split(".")[0] + ".jpg"
+                console.log("IMG LOC " , imgLocation)
 
                 content = <img onClick={() => displayImgModal(imgLocation)} className="response-img msgImg" src={imgLocation} alt="logo" />
 
