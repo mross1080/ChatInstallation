@@ -57,12 +57,12 @@ const Testimony = ({ match }) => {
     console.log("NUMBER ID IS ", numberId)
     let previousPage = numberId - 1
     let nextPage = numberId + 1
-    if (numberId == 0) {
-        previousPage = testimoniesForGroup - 1
+    if (numberId == 1) {
+        previousPage = testimoniesForGroup 
     }
 
-    if (nextPage == testimoniesForGroup) {
-        nextPage = 0
+    if (numberId == testimoniesForGroup) {
+        nextPage = 1
     }
 
     function Message(props) {
@@ -368,7 +368,7 @@ const App = () => (
 
             <Switch>
                 <Route exact path="/" component={Chats} />
-                <Route exact path="/chats" component={Chats} />
+        
                 <Route exact path="/video" component={Video} />
 
                 <Route exact path="/chats/:testimonyGroupId" component={TestimonyGroup} />

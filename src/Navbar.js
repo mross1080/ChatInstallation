@@ -12,6 +12,7 @@ export function NavBar(props) {
     let preguntasActive = ""
     let videoActive = ""
     let testimoniesActive = ""
+    let testimonyLinkUrl = (props["testiomnyGroupUrl"] == undefined ? "" : props["testiomnyGroupUrl"])
 
     
 
@@ -38,12 +39,12 @@ export function NavBar(props) {
     return (<div className="container"><nav className={'no-shadows '}>
         <div className="nav-wrapper">
 
-      <div className="col s5 center-align siteTitle"> <Link to="/chats">¡SE BUSCAN TESTIGOS!</Link></div>
+      <div className="col s5 center-align siteTitle"> <Link to="/">¡SE BUSCAN TESTIGOS!</Link></div>
       <div className="col s2  center-align navElement"><Link className={videoActive} to="/video">Video </Link></div>
 
-      <div className={"col s2 center-align navElement "}> <Link to="/chats" className={preguntasActive} >Preguntas</Link> </div>
+      <div className={"col s2 center-align navElement "}> <Link to="/" className={preguntasActive} >Preguntas</Link> </div>
 
-      <div className="col s2 center-align navElement"> <Link to={`/chats/${props["testiomnyGroupUrl"]}`} className={testimoniesActive} ><span className={testimoniesActive} >Testimonios </span> </Link> </div>
+      <div className="col s2 center-align navElement"> <Link to={`/chats/${testimonyLinkUrl}`} className={testimoniesActive} ><span className={testimoniesActive} >Testimonios </span> </Link> </div>
 
 
 
