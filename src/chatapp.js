@@ -336,7 +336,7 @@ componentDidMount() {
 
 
                                 TestimonyDB.map(({ name, id }) => (
-                                    <Link to={`chats/${id}`}>
+                                    <Link to={`${id}`}>
                                     <li className="testimonyLink" key={name}>
 
                                      
@@ -373,8 +373,8 @@ const App = () => (
         
                 <Route exact path="/video" component={Video} />
 
-                <Route exact path="/chats/:testimonyGroupId" component={TestimonyGroup} />
-                <Route exact path="/chats/:testimonyGroupId/:testimonyId" component={Testimony} />
+                <Route exact path="/:testimonyGroupId" component={TestimonyGroup} />
+                <Route exact path="/:testimonyGroupId/:testimonyId" component={Testimony} />
             </Switch>
         </div>
     </Router>

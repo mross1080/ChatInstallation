@@ -19,11 +19,11 @@ export function NavBar(props) {
 
     console.log("Location : ", window.location.pathname)
     console.log("/chats/" + props["testiomnyGroupUrl"])
-    if (window.location.pathname =="/chats") {
+    if (window.location.pathname =="/") {
         preguntasActive = "linkActive"
     } else     if (window.location.pathname =="/video") {
         videoActive = "linkActive"
-    } else if(window.location.pathname == "/chats/" + props["testiomnyGroupUrl"]) {
+    } else if(window.location.pathname == "/" + props["testiomnyGroupUrl"]) {
         testimoniesActive = "linkActive"
     } 
 
