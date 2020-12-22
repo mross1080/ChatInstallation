@@ -281,9 +281,11 @@ const Video = () => {
             </nav> */}
 
             <NavBar></NavBar>
-            <div>
-                <p class="question">Video will go here</p>
-            </div>
+            <div class="container">
+                <div class="modalContent">
+                <iframe src="https://player.vimeo.com/video/492567126?color=ffffff&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/492567126">&iexcl;Se buscan testigos!</a> from <a href="https://vimeo.com/user643483">Lizania Cruz</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+            </div></div>
 
         </div>
 

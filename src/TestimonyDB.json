@@ -2649,7 +2649,7 @@
    {
       "id": "colon",
       "name": "Col\u00f3n",
-      "question": "¿Por qué cree usted que la virgen de las mercedes protegió a los españoles y no a los indigenas en la batalla del santo cerro en 1495?",
+      "question": "¿Qué aprendió usted sobre Colón en la escuela que considere es la historia verídica?",
       "data": [
          [
             {
@@ -2683,7 +2683,7 @@
    {
       "id": "la_virgen_de_las_mercedes",
       "name": " La Virgen de las Mercedes",
-      "question": "\u00bfQu\u00e9 aprendi\u00f3 usted sobre Col\u00f3n en la escuela que considere es la historia ver\u00eddica?",
+      "question": "¿Por qué cree usted que la virgen de las mercedes protegió a los españoles y no a los indígenas en la batalla del santo cerro en 1495?",
       "data": [
          [
             {
