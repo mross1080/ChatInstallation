@@ -93,11 +93,6 @@
                "msg_file_type": "text"
             },
             {
-               "msg_sender": "participant",
-               "msg_body": " Mi respuesta es",
-               "msg_file_type": "text"
-            },
-            {
                "msg_sender": "admin",
                "msg_body": " Muchas gracias por su testimonio\n",
                "msg_file_type": "text"
