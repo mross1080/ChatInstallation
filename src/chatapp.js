@@ -7,6 +7,9 @@ import {
     useHistory, useLocation, browserHistory
 } from 'react-router-dom'
 
+
+import Linkify from 'react-linkify';
+
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import 'materialize-css/dist/css/materialize.min.css';
@@ -79,7 +82,16 @@ const Testimony = ({ match }) => {
             let msgType = props.msg.msg_file_type
             let position = message.msg_sender == "admin" ? "msgRight " : "msgLeftContent "
             if (msgType == "text") {
+                
+                
                 content = <p>{props.msg.msg_body}</p>
+                console.log(props.msg.msg_body)
+                if (props.msg.msg_body.includes("https://")) {
+                    content = <p><Linkify>{props.msg.msg_body}</Linkify></p>
+                }
+
+
+
             } else if (msgType == "image") {
                 let c = "/" + message.msg_body.split(" ")[1].trim()
                 console.log(c)

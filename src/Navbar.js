@@ -40,6 +40,8 @@ export function NavBar(props) {
         <div className="nav-wrapper">
 
       <div className="col s5 center-align siteTitle"> <Link to="/">¡SE BUSCAN TESTIGOS!</Link></div>
+      <div className={"col s2 center-align navElement "}> <a href="https://ii-rd.info/"  >ii-rd.info</a> </div>
+
       <div className="col s2  center-align navElement"><Link className={videoActive} to="/video">Video </Link></div>
 
       <div className={"col s2 center-align navElement "}> <Link to="/" className={preguntasActive} >Preguntas</Link> </div>
