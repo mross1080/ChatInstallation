@@ -78,7 +78,7 @@ const Testimony = ({ match }) => {
 
 
         try {
-
+            console.log("Current message ",message)
             let msgType = props.msg.msg_file_type
             let position = message.msg_sender == "admin" ? "msgRight " : "msgLeftContent "
             if (msgType == "text") {
@@ -104,7 +104,17 @@ const Testimony = ({ match }) => {
 
                 mediaTypeClass = "msgImage"
             } else if (msgType == "audio") {
-                let audioPath = message.msg_body.split(" ")[1]
+                console.log("Processing audio for ", message.msg_body)
+
+
+                let audioPath = message.msg_body
+                if (!message.msg_body.includes("AUDIO-2021")) {
+                    audioPath = message.msg_body.split(" ")[1]
+
+
+                }
+
+                
                 audioPath = "/" + audioPath.replace(/[\u200B-\u200e\uFEFF]/g, '');
                 audioPath = audioPath.split(".")[0] + ".mp3"
                 let playerClass = ""
