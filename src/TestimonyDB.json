@@ -4603,6 +4603,108 @@
                "msg_body": " Un abrazo\n",
                "msg_file_type": "text"
             }
+         ],
+         [
+            {
+               "msg_sender": "participant",
+               "msg_body": "Saludo\n",
+               "msg_file_type": "text"
+            },
+            {
+               "msg_sender": "admin",
+               "msg_body": " Buenas\n",
+               "msg_file_type": "text"
+            },
+            {
+               "msg_sender": "participant",
+               "msg_body": " Escribo por lo de la encuesta\n",
+               "msg_file_type": "text"
+            },
+            {
+               "msg_sender": "admin",
+               "msg_body": "  ¿Desea dar su testimonio?\n",
+               "msg_file_type": "text"
+            },
+            {
+               "msg_sender": "participant",
+               "msg_body": " La respuesta es que lógico que si?\n",
+               "msg_file_type": "text"
+            },
+            {
+               "msg_sender": "admin",
+               "msg_body": "¿cual pregunta esta respondiendo?\n",
+               "msg_file_type": "text"
+            },
+            {
+               "msg_sender": "participant",
+               "msg_body": " Si\n",
+               "msg_file_type": "text"
+            },
+            {
+               "msg_sender": "participant",
+               "msg_body": "Es una pregunta tonta\n",
+               "msg_file_type": "text"
+            },
+            {
+               "msg_sender": "participant",
+               "msg_body": " En los resultados usted ya se dio cuenta\n",
+               "msg_file_type": "text"
+            },
+            {
+               "msg_sender": "admin",
+               "msg_body": " No se cual pregunta respondiendo exactamente\n",
+               "msg_file_type": "text"
+            },
+            {
+               "msg_sender": "admin",
+               "msg_body": " ¿Cual vio usted?\n",
+               "msg_file_type": "text"
+            },
+            {
+               "msg_sender": "admin",
+               "msg_body": " Es una serie de 8 preguntas\n",
+               "msg_file_type": "text"
+            },
+            {
+               "msg_sender": "participant",
+               "msg_body": " CREE USTED QUE PEÑA GÓMEZ TENÍA DERECHO A SER PRESIDENTE?  MI respuesta es (si 👍)\n",
+               "msg_file_type": "text"
+            },
+            {
+               "msg_sender": "admin",
+               "msg_body": " Ahh perfecto\n",
+               "msg_file_type": "text"
+            },
+            {
+               "msg_sender": "admin",
+               "msg_body": " ¿Y por que? En su opinion\n",
+               "msg_file_type": "text"
+            },
+            {
+               "msg_sender": "participant",
+               "msg_body": "No tenía ningún impedimento legal eso le dal el derecho por eso fue candidato\n",
+               "msg_file_type": "text"
+            },
+            {
+               "msg_sender": "admin",
+               "msg_body": "Buenisimo\n",
+               "msg_file_type": "text"
+            },
+            {
+               "msg_sender": "admin",
+               "msg_body": "¿Y usted voto por el? \n",
+               "msg_file_type": "text"
+            },
+            {
+               "msg_sender": "participant",
+               "msg_body": "No \n",
+               "msg_file_type": "text"
+            },
+            {
+               "msg_sender": "admin",
+               "msg_body": "Ok. Muchas gracias por participar \n",
+               "msg_file_type": "text"
+            }
          ]
       ]
    }
