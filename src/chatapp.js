@@ -394,7 +394,7 @@ componentDidMount() {
 
 const App = () => (
     <Router>
-        <div id="container">
+    
 
 
 
@@ -407,7 +407,6 @@ const App = () => (
                 <Route exact path="/:testimonyGroupId" component={TestimonyGroup} />
                 <Route exact path="/:testimonyGroupId/:testimonyId" component={Testimony} />
             </Switch>
-        </div>
     </Router>
 )
 
