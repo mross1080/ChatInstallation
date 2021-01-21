@@ -78,6 +78,7 @@ const Testimony = ({ match }) => {
 
 
         try {
+            console.log(props)
             console.log("Current message ",message)
             let msgType = props.msg.msg_file_type
             let position = message.msg_sender == "admin" ? "msgRight " : "msgLeftContent "
@@ -108,22 +109,30 @@ const Testimony = ({ match }) => {
 
 
                 let audioPath = message.msg_body
-                if (!message.msg_body.includes("AUDIO-2021")) {
+                console.log(audioPath.split(" "))
+                if ((!audioPath.includes("AUDIO-2021")) && (audioPath.split(" ").length === 4 )) {
                     audioPath = message.msg_body.split(" ")[1]
+                    console.log("splitting audio paths")
 
 
                 }
 
-                
+                console.log("Audio path is currently ", audioPath)
                 audioPath = "/" + audioPath.replace(/[\u200B-\u200e\uFEFF]/g, '');
                 audioPath = audioPath.split(".")[0] + ".mp3"
+
+                if (audioPath.split(" ").length === 2) {
+                    audioPath = "/" + audioPath.split(" ")[1]
+                }
+
+                console.log("Audio path is now ", audioPath)
+
                 let playerClass = ""
                 if (position == "msgRight ") {
                     playerClass = "audioDark"
                 }
                 
-                console.log(position)
-                console.log(playerClass)
+        
 
                 console.log("AUDIO PATH ", audioPath)
 
