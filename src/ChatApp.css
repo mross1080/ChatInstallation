@@ -223,6 +223,38 @@ a {
 .rhap_container{
   box-shadow: none;
 }
+
+@media  (max-width: 800px) {
+  #root{
+  }
+
+  .nav-wrapper{
+    margin-top: 15px;
+  }
+  .siteTitle{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+    margin-right: auto;
+    line-height: initial;
+  }
+
+  .navElement {
+    margin: 4px 20px;
+    font-size: 16px;
+    line-height: initial;
+  }
+
+  .optionText {
+    font-size: 21px;
+    margin-top: 30px;
+    justify-content: start;
+    flex-shrink: 3;
+    margin-left: 20px;
+  }
+}
+
+
 @media  (max-width: 600px) {
   #root{
     width: fit-content
@@ -231,19 +263,19 @@ a {
   .siteTitle{
     font-family: 'Rubik', sans-serif;
     font-weight: 900;
-    font-size: 11px;
+    font-size: 9px;
     margin-right: auto;
     line-height: initial;
   }
 
   .navElement {
     margin: 0px 20px;
-    font-size: 20px;
+    font-size: 12px;
     line-height: initial;
   }
 
   .optionText {
-    font-size: 21px;
+    font-size: 17px;
     margin-top: 30px;
     justify-content: start;
     flex-shrink: 3;
