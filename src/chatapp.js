@@ -283,7 +283,7 @@ const TestimonyGroup = ({ match }) => {
 
                                    
                            
-                                <div className="iconContainer"> <i class="large material-icons arrow col offset-s1 s1">        chevron_right</i>
+                                <div className="iconContainer"> <i class="material-icons arrow">        chevron_right</i>
                                 </div>
                             </li>       </Link>
                         )
@@ -375,7 +375,7 @@ componentDidMount() {
                                   
 
 
-                                        <div className="iconContainer"> <i class="large material-icons arrow col offset-s1 s1">        chevron_right</i>
+                                        <div className="iconContainer"> <i class="material-icons arrow col offset-s1 s1">        chevron_right</i>
                                         </div>
                                     </li>      </Link>
                                 ))
